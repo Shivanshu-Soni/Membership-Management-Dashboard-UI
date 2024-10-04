@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velarium Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="index.html">Velarium</a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="dashboard.html" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                           Member Dashboard
+                        </a>
+                    </li>
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-solid fa-file-lines pe-2"></i>
+                                Member
+                            </a>
+                            <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="memberform.html" class="sidebar-link"><i class="fa-solid fa-user-plus pe-2"></i>Add Member</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="MemberList.html" class="sidebar-link"><i class="fa-solid fa-list pe-2"></i>MemberList</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Add Dues.html" class="sidebar-link"><i class="fa-solid fa-money-bill-wave pe-2"></i>Dues</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Payment.html" class="sidebar-link"><i class="fa-solid fa-money-check-dollar pe-2"></i>Payments</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="AddressList.html" class="sidebar-link"><i class="fa-regular fa-address-card pe-2"></i>Address</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="AddNotes.html" class="sidebar-link"><i class="fa-solid fa-note-sticky pe-2"></i>Notes</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="AddDocument.html" class="sidebar-link"><i class="fa-solid fa-file pe-2"></i>Documents</a>
+                                </li>
+                            
+                            </ul>
+                        </li>
+                        
+                        
+
+                       
+                    </ul>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <h7>Welcome Velarium User</h7>
+                </div>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="form-nav">
+                            
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content  ">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h4>Add Member</h4>
+                    </div>
+                    <div class="card border-10" style="width: 100%;">
+                        <div class="card-body">
+                            <form class="row g-3">
+                               
+                                <div class="mb-3 col-md-6" >
+                                    <img src="./image/profile.jpg" alt="" title="" class="img-fluid" height="70px" width="70px">
+                                    <input type="file" id="img" name="PhotoPath" accept="image/*">
+                                </div>
+                                <div class=" col-md-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="middleName" class="form-label">Middle Name</label>
+                                    <input type="text" class="form-control" id="middleName">
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="contact" class="form-label">Contact</label>
+                                    <input type="text" class="form-control" id="contact" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="dob" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="membershipType" class="form-label">Membership Type</label>
+                                    <select class="form-control" id="membershipType" required>
+                                        <option value="">Select</option>
+                                        <option value="standard">Standard</option>
+                                        <option value="premium">Premium</option>
+                                        <option value="vip">VIP</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="comments" class="form-label">Comments</label>
+                                    <textarea class="form-control" id="comments" rows="3"></textarea>
+                                </div>
+                                <div class="d-grid gap-2 col-3 mx-auto">
+                                    <button class="btn btn-primary" type="button">Save</button>
+                                    
+                                  </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+             
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+                
+           
+    <div class="container">
+        <div class="card border-10" style="width: 100%;">
+            <div class="mb-3">
+                <h4>Member Details</h4>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="memberDetailsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="address-tab" data-bs-toggle="tab" data-bs-target="#address"
+                            type="button" role="tab" aria-controls="address" aria-selected="true">Address</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dues-tab" data-bs-toggle="tab" data-bs-target="#dues" type="button"
+                            role="tab" aria-controls="dues" aria-selected="false">Dues</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment"
+                            type="button" role="tab" aria-controls="payment" aria-selected="false">Payment</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="legal-tab" data-bs-toggle="tab" data-bs-target="#legal" type="button"
+                            role="tab" aria-controls="legal" aria-selected="false">Legal</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="document-tab" data-bs-toggle="tab" data-bs-target="#document"
+                            type="button" role="tab" aria-controls="document" aria-selected="false">Document</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes" type="button"
+                            role="tab" aria-controls="notes" aria-selected="false">Notes</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="memberDetailsTabContent">
+                    <div class="tab-pane fade show active" id="address" role="tabpanel" aria-labelledby="address-tab">
+                        <form id="addressForm">
+                            <div class="mb-3">
+                                <label for="address1" class="form-label">Address 1</label>
+                                <input type="text" class="form-control" id="address1" required>
+                        
+                                <label for="address2" class="form-label">Address 2</label>
+                                <input type="text" class="form-control" id="address2">
+                        
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" required>
+                        
+                            
+                        
+                                <label for="state" class="form-label">State</label>
+                                <select class="form-select" id="state" required>
+                                    <option value="" disabled selected>Select your state</option>
+                                    <option value="NY">NY</option>
+                                    <option value="OH">OH</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </form>
+                        <table class="table d-none" id="addressTable">
+                            <thead>
+                                <tr>
+                                    <th>Address1</th>
+                                    <th>Address2</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Table content will be populated via JavaScript -->
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="tab-pane fade" id="dues" role="tabpanel" aria-labelledby="dues-tab">
+                        <form id="duesForm">
+                            <div class="mb-3">
+                                <label for="addDues" class="form-label">Add Dues</label>
+                                <input type="text" class="form-control" id="addDues" required>
+                            </div>
+                       
+                        
+                        <div class="mb-3">
+                            <label for="addDues" class="form-label">Dues Date</label>
+                            <input type="date" class="form-control" id="addDues" required>
+                        </div>
+                    </form>
+                    <table class="table d-none" id="addressTable">
+                        <thead>
+                            <tr>
+                                <th>Dues</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table content will be populated via JavaScript -->
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
+                        <form id="paymentForm">
+                            <div class="mb-3">
+                                <label for="paymentAmount" class="form-label">Payment Amount</label>
+                                <input type="text" class="form-control" id="paymentAmount" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="paymentAmount" class="form-label">Payment Type</label>
+                                <input type="text" class="form-control" id="paymentAmount" required>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="legal" role="tabpanel" aria-labelledby="legal-tab">
+                        <form id="legalForm">
+                            <div class="mb-3">
+                                <label for="legalDetails" class="form-label">Legal Details</label>
+                                <input type="text" class="form-control" id="legalDetails" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="legalDetails" class="form-label">Comments</label>
+                                <input type="text" class="form-control" id="legalDetails" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="document" role="tabpanel" aria-labelledby="document-tab">
+                        <form id="documentForm">
+                            <div class="mb-3">
+                                <label for="uploadDocument" class="form-label">Upload Document</label>
+                                <input type="file" class="form-control" id="uploadDocument" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="uploadDocument" class="form-label">Desciption</label>
+                                <input type="textarea" class="form-control" id="uploadDocument">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
+                        <form id="notesForm">
+                            <div class="mb-3">
+                                <label for="memberNotes" class="form-label">Member Notes</label>
+                                <input type="file" class="form-control" id="uploadNotes">
+                            </div>
+                            <div class="mb-3">
+                                <label for="memberNotes" class="form-label">Desciption</label>
+                                <input type="textarea" class="form-control" id="uploadNotes">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <button id="btn-primary" class="btn btn-primary mt-2">Save</button>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</main>
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>Velarium</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">About Us</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <script>
+        
+        $(document).ready(function () {
+    // Initialize Bootstrap tab navigation
+    var tabs = new bootstrap.Tab(document.querySelector('#address-tab'));
+    tabs.show();
+
+    // Toggle form visibility based on active tab
+    $('#memberDetailsTab a').on('click', function (event) {
+        event.preventDefault();
+        var targetTab = $(this).attr('data-bs-target');
+
+        // Activate the clicked tab
+        new bootstrap.Tab(this).show();
+
+        // Show the target tab content and hide others
+        $(targetTab).addClass('show active').siblings().removeClass('show active');
+    });
+
+    // Handle form submission
+    $('#btn-primary').click(function () {
+        var activeTab = $('#memberDetailsTabContent').find('.tab-pane.active');
+        var formId = activeTab.find('form').attr('id');
+        var tableId = formId.replace('Form', 'Table');
+        var formData = activeTab.find('form').serializeArray();
+
+        // Populate the table with form data
+        var tableBody = $('#' + tableId).find('tbody');
+        tableBody.empty(); // Clear previous table data
+        formData.forEach(function (field) {
+            tableBody.append('<tr><td>' + field.name + '</td><td>' + field.value + '</td></tr>');
+        });
+
+        // Show the table
+        $('#' + tableId).removeClass('d-none');
+
+        // Perform form submission or validation here
+        console.log('Submitting form from tab: ' + formId);
+    });
+
+    // Additional tab switching handler (if necessary)
+    $('button[data-bs-toggle="tab"]').on('click', function (e) {
+        var target = $(e.target).data("bs-target");
+        $('.tab-pane').removeClass('show active');
+        $(target).addClass('show active');
+    });
+});
+    
+    </script>
+    
+</body>
+
+</html>

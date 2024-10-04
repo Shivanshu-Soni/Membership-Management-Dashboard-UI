@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        background-color: #3d4247;
+        /* Dark background */
+        color: #fff;
+        /* White text */
+        font-family: 'Arial', sans-serif;
+        /* Matching font */
+    }
+
+    .login-container {
+        background-color: #212529;
+        /* Darker background for the card */
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-height: 500px;
+        height: 100%;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .form-control {
+        background-color: #495057;
+        /* Dark input background */
+        color: #fff;
+        /* White input text */
+        border: none;
+        /* Remove border */
+    }
+
+    .form-control:focus {
+        background-color: #495057;
+        /* Keep dark input background on focus */
+        color: #fff;
+        /* Keep white input text on focus */
+    }
+
+    .btn-custom {
+        background-color: #007bff;
+        /* Custom button color */
+        border: none;
+        /* Remove border */
+    }
+
+    .btn-custom:hover {
+        background-color: #0056b3;
+        /* Darker shade on hover */
+    }
+
+    .login-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .login-main {
+        font-size: 30px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+</style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1 class="login-main">Velarium</h1>
+        <h2 class="login-title">Login</h2>
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-custom" onclick="Login()">Login</button>
+            </div>
+        </form>
+        <br />
+        <a>Forget Password? Reset Here</a>
+    </div>
+
+    <a href="#" class="theme-toggle">
+        <i class="fa-regular fa-moon"></i>
+        <i class="fa-regular fa-sun"></i>
+    </a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/dashboard-main/js/script.js"></script>
+    <script>
+        function Login()
+        {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email === "shivanshu.1231.ss@gmail.com" && password === "shiv@123")
+            {
+                alert("Welcome shivanshu")
+                window.location.href = "index.html"
+
+            }
+            else { alert("You are not authorised") }
+
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

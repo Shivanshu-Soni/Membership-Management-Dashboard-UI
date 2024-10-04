@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velarium Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/Homecalendar.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+    <style>
+        .notification-bell {
+            position: relative;
+            display: inline-block;
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+
+        .notification-popup {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0;
+            width: 300px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .notification-popup.active {
+            display: block;
+        }
+
+        .notification-popup .notification-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .notification-popup .notification-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .notification-popup .notification-item:last-child {
+            border-bottom: none;
+        }
+
+        .notification-popup .notification-item i {
+            margin-right: 10px;
+        }
+
+        .modal-content {
+    border-radius: 10px;
+    background-color: var(--bs-dark-bg-subtle); /* Adjust based on your theme */
+    color: var(--bs-emphasis-color);
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar ">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="#">Velarium </a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <ul class="sidebar-nav">
+                        <!-- <li class="sidebar-header"> Admin Elements </li> -->
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-file-lines pe-2"></i> Member
+                            </a>
+                            <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="./MemberList.html" class="sidebar-link">MemberList</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Memberform.html" class="sidebar-link">Add Member</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="GetMemberForm.html" class="sidebar-link">MemberDetails</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-coins pe-2"></i> Finance
+                            </a>
+                            <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="Add Dues.html" class="sidebar-link">Add Dues</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Payment.html" class="sidebar-link">Add Payment</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Rate Code</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#reports"
+                                data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-solid fa-code-branch pe-2"></i> Reports
+                            </a>
+                            <ul id="reports" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report1</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report2</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report3</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#dispatch"
+                                data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-font-awesome pe-2"></i> Dispatch
+                            </a>
+                            <ul id="dispatch" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Dispatch List</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Dispatch form</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Dispatch Notes</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#legal" data-bs-toggle="collapse"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-box-archive pe-2"></i> Legal
+                            </a>
+                            <ul id="legal" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Support</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Legal Action</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Courts</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#events2"
+                                data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-calendar pe-2"></i> Events
+                            </a>
+                            <ul id="events2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="EventList.html" class="sidebar-link">Event List</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Event.html" class="sidebar-link">Add Event</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#task" data-bs-toggle="collapse"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-layer-group pe-2"></i> Task
+                            </a>
+                            <ul id="task" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="TaskList.html" class="sidebar-link">TaskList</a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#admin" data-bs-toggle="collapse"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-user-secret pe-2"></i> Admin
+                            </a>
+                            <ul id="admin" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="UserForm.html" class="sidebar-link">Add User</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="UserList.html" class="sidebar-link">User List</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+            </div>
+        </aside>
+
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <h7>Welcome Velarium User</h7>
+                </div>
+
+                <div class="container m-2">
+                    <div class="btn btn-secondary mx-3 notification-bell" id="notificationBell" data-toggle="modal" data-target="#notificationModal">
+                        <i class="bi bi-bell-fill"></i>
+                        <span class="notification-count" id="notificationCount">4</span>
+                    </div>
+            
+                    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="notificationModalLabel">New Notifications</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Update completed</h5>
+                                                <small>30m ago</small>
+                                            </div>
+                                            <p class="mb-1">Restart server 12 to complete the update.</p>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Lorem ipsum</h5>
+                                                <small>2h ago</small>
+                                            </div>
+                                            <p class="mb-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</p>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Login from 192.186.1.8</h5>
+                                                <small>5h ago</small>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">New connection</h5>
+                                                <small>14h ago</small>
+                                            </div>
+                                            <p class="mb-1">Christina accepted your request.</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-collapse navbar">
+
+                    <!-- <ul class="navbar-nav">
+                        <li class="form-nav">
+                            <form id="searchForm" class="ms-auto d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search Member"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-light" type="submit">
+                                    <i id="searchbutton" class="bi bi-search"></i>
+                                </button>
+                            </form>
+                        </li> -->
+
+
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- <a href="#" class="dropdown-item">Profile</a> -->
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>  
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h4>TaskList</h4>
+                    </div>
+                    <div class="row">
+                      
+                        
+                        <div class=" mb-3" >
+                            <button id="addTaskButton" class="btn btn-primary" data-bs-target="tooltip" title="Add Task" ><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            <button id="ImportList" class="btn btn-primary"><i class="fa fa-download" data-bs-target="tooltip" title="Download list" aria-hidden="true"></i></button>
+                        </div>
+                        <!-- Table Element -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col col-md-12">
+                                    <div class="card border-10 w-100">
+                                        <div class="card-body">
+                                            <table id="UserList" class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">StartDate</th>
+                                                        <th scope="col">DueDate</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Priority</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="UserForm.html" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="##" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#l" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="UserForm.html" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Task1</td>
+                                                        <td>01/01/2024</td>
+                                                        <td>12/12/2024</td>
+                                                        <td>In process</td>
+                                                        <td>Medium</td>
+                                                        <td>
+                                                            <a href="#" class="edit-link"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="delete-link" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                                            </a>
+                                                            <a href="#" class="view-link"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+                    
+
+                   
+                    
+                    
+                </div>
+
+                <!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </main>
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>Velarium</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">About Us</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Terms & Conditions</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+    <script src="js/script.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+    <script src="js/Index1.js"></script>
+    <script src="js/HomeCalendar.js"></script>
+
+    <script>
+
+        // $('#calendar').fullCalendar({
+        //     initialView: 'dayGridMonth', // Initial view when calendar loads
+        //     events: [
+        //         {
+        //             title: 'Event 1',
+        //             start: '2024-06-01' // Example start date
+        //         },
+        //         {
+        //             title: 'Event 2',
+        //             start: '2024-06-15' // Example start date
+        //         }
+        //         // Add more events as needed
+        //     ]
+        // });
+
+        document.getElementById('notificationBell').addEventListener('click', function () {
+            document.getElementById('notificationModal').classList.toggle('active');
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            debugger
+            event.preventDefault(); // Prevent the default form submission
+            window.location.href = 'MemberList.html'; // Redirect to MemberList.html
+        });
+        // $(document).ready(function() {
+        //     $('#eventTable').DataTable();
+        // });
+
+    </script>
+
+
+</body>
+
+</html>

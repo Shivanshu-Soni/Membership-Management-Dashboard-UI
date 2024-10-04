@@ -1,0 +1,55 @@
+/* custom.css */
+.card{
+    width: 50%;
+    
+}
+/* Ensure the DataTable fits within the card body */
+.card-body .dataTables_wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Adjust DataTable header colors to match the theme */
+table.dataTable thead {
+    background-color: #343a40;
+    color: #fff;
+}
+
+/* Adjust DataTable row colors for dark theme */
+table.dataTable {
+    background-color: #212529;
+    color: #fff;
+}
+
+table.dataTable tbody tr {
+    background-color: #212529;
+    color: #fff;
+}
+
+table.dataTable tbody tr:hover {
+    background-color: #343a40;
+}
+
+/* Style for pagination controls */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #fff !important;
+    background-color: #343a40 !important;
+    border: 1px solid #495057;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #495057 !important;
+    border: 1px solid #6c757d;
+}
+
+/* Style for search input */
+.dataTables_wrapper .dataTables_filter input {
+    color: #fff;
+    background-color: #343a40;
+    border: 1px solid #495057;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    background-color: #495057;
+}
+

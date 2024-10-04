@@ -1,0 +1,44 @@
+[
+    {
+        "firstName": "John",
+        "middleName": "A.",
+        "lastName": "Doe",
+        "contact": "123-456-7890",
+        "email": "john.doe@example.com",
+        "address": "123 Main St, Anytown, USA",
+        "dob": "1990-01-01",
+        "membershipType": "Standard"
+    },
+    {
+        "firstName": "Jane",
+        "middleName": "B.",
+        "lastName": "Smith",
+        "contact": "987-654-3210",
+        "email": "jane.smith@example.com",
+        "address": "456 Elm St, Othertown, USA",
+        "dob": "1985-05-15",
+        "membershipType": "Premium"
+    },
+
+    {
+        "firstName": "Haley",
+        "middleName": "B.",
+        "lastName": "Smith",
+        "contact": "987-654-3210",
+        "email": "jane.smith@example.com",
+        "address": "456 Elm St, Othertown, USA",
+        "dob": "1985-05-15",
+        "membershipType": "Premium"
+    },
+
+    {
+        "firstName": "Matt",
+        "middleName": "B.",
+        "lastName": "thorn",
+        "contact": "987-654-3210",
+        "email": "jane.smith@example.com",
+        "address": "456 Elm St, Othertown, USA",
+        "dob": "1985-05-15",
+        "membershipType": "Premium"
+    }
+]

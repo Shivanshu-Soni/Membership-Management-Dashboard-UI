@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velarium Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Calender.css">
+    
+    
+    <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+</head>
+ 
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar " >
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="index.html">Velarium </a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        
+                    </li>
+                    <ul class="sidebar-nav">
+                        <!-- <li class="sidebar-header"> Admin Elements </li> -->
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-solid fa-file-lines pe-2"></i> Member
+                            </a>
+                            <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="./MemberList.html" class="sidebar-link">MemberList</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Memberform.html" class="sidebar-link">Add Member</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="GetMemberForm.html" class="sidebar-link">MemberDetails</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-solid fa-sliders pe-2"></i> Finance
+                            </a>
+                            <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="Add Dues.html" class="sidebar-link">Add Dues</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Payment.html" class="sidebar-link">Add Payment</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Rate Code</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#reports" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Reports
+                            </a>
+                            <ul id="reports" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report1</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report2</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report3</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#dispatch" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Dispatch
+                            </a>
+                            <ul id="dispatch" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Dispatch List</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Dispatch Form</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Dispatch</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#legal" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-hat-wizard pe-2"></i> Legal
+                            </a>
+                            <ul id="legal" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Support</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Legal Action</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Courts</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#events2" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-calendar pe-2"></i> Events
+                            </a>
+                            <ul id="events2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="EventList.html" class="sidebar-link">Event List</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Event.html" class="sidebar-link">Add Event</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#admin" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Admin
+                            </a>
+                            <ul id="admin" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="UserForm.html" class="sidebar-link">Add User</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="UserRoles.html" class="sidebar-link">User Roles</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+        </aside>
+
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <h7>Welcome Velarium User</h7>
+                </div>
+
+                <div class="btn btn-secondary mx-3 " ><i class="bi bi-bell-fill"></i></div>
+
+
+                <div class="navbar-collapse navbar">
+
+                    <ul class="navbar-nav">
+                        <li class="form-nav">
+                            
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- <a href="#" class="dropdown-item">Profile</a> -->
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+<main>
+
+ <!-- Main wrapper for the calendar application -->
+ <div class="wrapper m-4">
+    <div class="container-calendar">
+        <div id="left">
+            <h4>Calendar</h4>
+            <div id="event-section">
+                <h3>Add Event</h3>
+                <input type="date" id="eventDate">
+                <input type="text"
+                    id="eventTitle"
+                    placeholder="Event Title">
+                <input type="text"
+                    id="eventDescription"
+                    placeholder="Event Description">
+                <button id="addEvent" onclick="addEvent()">
+                    Add
+                </button>
+            </div>
+            <div id="reminder-section">
+                <h3>Reminders</h3>
+                <!-- List to display reminders -->
+                <ul id="reminderList">
+                    <li data-event-id="1">
+                        <strong>Event Title</strong>
+                        - Event Description on Event Date
+                        <button class="delete-event"
+                            onclick="deleteEvent(1)">
+                            Delete
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="right">
+            <h3 id="monthAndYear"></h3>
+            <div class="button-container-calendar">
+                <button id="previous"
+                        onclick="previous()">
+                      ‹
+                  </button>
+                <button id="next"
+                        onclick="next()">
+                      ›
+                  </button>
+            </div>
+            <table class="table-calendar"
+                   id="calendar"
+                   data-lang="en">
+                <thead id="thead-month"></thead>
+                <!-- Table body for displaying the calendar -->
+                <tbody id="calendar-body"></tbody>
+            </table>
+            <div class="footer-container-calendar">
+                <label for="month">Jump To: </label>
+                <!-- Dropdowns to select a specific month and year -->
+                <select id="month" onchange="jump()">
+                    <option value=0>Jan</option>
+                    <option value=1>Feb</option>
+                    <option value=2>Mar</option>
+                    <option value=3>Apr</option>
+                    <option value=4>May</option>
+                    <option value=5>Jun</option>
+                    <option value=6>Jul</option>
+                    <option value=7>Aug</option>
+                    <option value=8>Sep</option>
+                    <option value=9>Oct</option>
+                    <option value=10>Nov</option>
+                    <option value=11>Dec</option>
+                </select>
+                <!-- Dropdown to select a specific year -->
+                <select id="year" onchange="jump()"></select>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+   
+    <a href="#" class="theme-toggle">
+        <i class="fa-regular fa-moon"></i>
+        <i class="fa-regular fa-sun"></i>
+    </a>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row text-muted">
+                <div class="col-6 text-start">
+                    <p class="mb-0">
+                        <a href="#" class="text-muted">
+                            <strong>Velarium</strong>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-6 text-end">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted">Contact</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted">About Us</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-muted">Terms & Conditions</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.2/main.min.js"></script>
+<script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+
+<!-- Include the JavaScript file for the calendar functionality -->
+<script src="./js/Calender.js"></script>
+
+</body>
+ 
+</html>

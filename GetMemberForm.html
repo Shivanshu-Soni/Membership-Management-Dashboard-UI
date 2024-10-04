@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velarium Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="index.html">Velarium</a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="dashboard.html" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                           Member Dashboard
+                        </a>
+                    </li>
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-solid fa-file-lines pe-2"></i>
+                                Member
+                            </a>
+                            <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="memberform.html" class="sidebar-link">Add Member</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="MemberList.html" class="sidebar-link">MemberList</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Add Dues.html" class="sidebar-link">Dues</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Payment.html" class="sidebar-link">Payments</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="AddressList.html" class="sidebar-link">Address</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="memberform.html" class="sidebar-link">Notes</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="memberform.html" class="sidebar-link">Documents</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <h7>Welcome Velarium User</h7>
+                </div>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="form-nav">
+                            
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content  ">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h4>Add Member</h4>
+                    </div>
+                    <div class="card border-10" style="width: 100%;">
+                        <div class="card-body">
+                            <form class="row g-3">
+                                <div class="mb-3 col-md-6">
+                                    <img src="./image/jhon Doe.jfif" alt="" title="" class="img-fluid" height="70px" width="70px">
+                                    <input type="file" id="img" name="PhotoPath" accept="image/*" value="abc.doc">
+                                </div>
+                                <div class=" col-md-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" value="John" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="middleName" class="form-label">Middle Name</label>
+                                    <input type="text" class="form-control" id="middleName" value="A." required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" value="Doe" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="contact" class="form-label">Contact</label>
+                                    <input type="text" class="form-control" id="contact" value="123-456-7890" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" value="john.doe@example.com" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address" value="123 Elm Street" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="dob" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob" value="1990-01-01" required>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="membershipType" class="form-label">Membership Type</label>
+                                    <select class="form-control" id="membershipType" required>
+                                        <option value="">Select</option>
+                                        <option value="standard" selected>Standard</option>
+                                        <option value="premium">Premium</option>
+                                        <option value="vip">VIP</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="comments" class="form-label">Comments</label>
+                                    <textarea class="form-control" id="comments" rows="2"> comment</textarea>
+                                </div>
+                                <div class="d-flex gap-2 col-3 mx-auto">
+                                    <button class="btn btn-primary" type="button">Save</button>
+                                    <button class="btn btn-success" type="button">Edit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+
+            <div class="container">
+                <div class="card border-10" style="width: 100%;">
+                    <div class="mb-3">
+                        <h4>Member Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="memberDetailsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="address-tab" data-bs-toggle="tab" data-bs-target="#address"
+                                    type="button" role="tab" aria-controls="address" aria-selected="true">Address</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="dues-tab" data-bs-toggle="tab" data-bs-target="#dues" type="button"
+                                    role="tab" aria-controls="dues" aria-selected="false">Dues</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment"
+                                    type="button" role="tab" aria-controls="payment" aria-selected="false">Payment</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="legal-tab" data-bs-toggle="tab" data-bs-target="#legal" type="button"
+                                    role="tab" aria-controls="legal" aria-selected="false">Legal</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes" type="button"
+                                    role="tab" aria-controls="notes" aria-selected="false">Notes</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" type="button"
+                                    role="tab" aria-controls="documents" aria-selected="false">Documents</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="memberDetailsTabContent">
+                            <div class="tab-pane fade show active" id="address" role="tabpanel" aria-labelledby="address-tab">
+                                <!-- Address content -->
+                            </div>
+                            <div class="tab-pane fade" id="dues" role="tabpanel" aria-labelledby="dues-tab">
+                                <!-- Dues content -->
+                            </div>
+                            <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="payment-tab">
+                                <!-- Payment content -->
+                            </div>
+                            <div class="tab-pane fade" id="legal" role="tabpanel" aria-labelledby="legal-tab">
+                                <!-- Legal content -->
+                            </div>
+                            <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
+                                <!-- Notes content -->
+                            </div>
+                            <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                                <!-- Documents content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

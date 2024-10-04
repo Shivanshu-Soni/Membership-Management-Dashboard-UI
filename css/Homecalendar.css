@@ -1,0 +1,82 @@
+/* Define CSS variables for themes */
+:root {
+    --calendar-bg-light: #ffffff;
+    --calendar-bg-dark: #222424;
+    --calendar-text-light: #000000;
+    --calendar-text-dark: #e9ecef;
+    --calendar-hover-light: #e0e0e0;
+    --calendar-hover-dark: #495057;
+    --calendar-selected-light: #3b82f6;
+    --calendar-selected-dark: #3b82f6;
+    --calendar-shadow-light: rgba(0, 0, 0, 0.1);
+    --calendar-shadow-dark: rgba(34, 46, 60, 0.1);
+}
+
+/* Light Theme Styles */
+html[data-bs-theme="light"] .calendar {
+    background-color: var(--calendar-bg-light);
+    color: var(--calendar-text-light);
+    box-shadow: 0 0 10px var(--calendar-shadow-light);
+}
+
+html[data-bs-theme="light"] .date:hover {
+    background-color: var(--calendar-hover-light);
+}
+
+html[data-bs-theme="light"] .date.selected {
+    background-color: var(--calendar-selected-light);
+}
+
+/* Dark Theme Styles */
+html[data-bs-theme="dark"] .calendar {
+    background-color: var(--calendar-bg-dark);
+    color: var(--calendar-text-dark);
+    box-shadow: 0 0 10px var(--calendar-shadow-dark);
+}
+
+html[data-bs-theme="dark"] .date:hover {
+    background-color: var(--calendar-hover-dark);
+}
+
+html[data-bs-theme="dark"] .date.selected {
+    background-color: var(--calendar-selected-dark);
+}
+
+.calendar {
+    width: 350px;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.prev, .next {
+    cursor: pointer;
+}
+
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day, .date {
+    text-align: center;
+    padding: 10px;
+}
+
+.date {
+    cursor: pointer;
+}
+
+.date.selected {
+    color: #fff;
+    border-radius: 50%;
+}

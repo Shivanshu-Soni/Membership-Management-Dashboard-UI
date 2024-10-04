@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velarium Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css"> 
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar " >
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="Index.html">Velarium </a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <ul class="sidebar-nav">
+                        <!-- <li class="sidebar-header"> Admin Elements </li> -->
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-solid fa-file-lines pe-2"></i> Member
+                            </a>
+                            <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="./MemberList.html" class="sidebar-link">MemberList</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Memberform.html" class="sidebar-link">Add Member</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="GetMemberForm.html" class="sidebar-link">MemberDetails</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-solid fa-sliders pe-2"></i> Finance
+                            </a>
+                            <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="Add Dues.html" class="sidebar-link">Add Dues</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Payment.html" class="sidebar-link">Add Payment</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Rate Code</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#reports" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Reports
+                            </a>
+                            <ul id="reports" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report1</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report2</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Report3</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#dispatch" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Dispatch
+                            </a>
+                            <ul id="dispatch" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Dispatch1</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                    
+                        
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#legal" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Legal
+                            </a>
+                            <ul id="legal" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Support</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Legal Action</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Courts</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#events2" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Events
+                            </a>
+                            <ul id="events2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="EventList.html" class="sidebar-link">Event List</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="Event.html" class="sidebar-link">Add Event</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#admin" data-bs-toggle="collapse" aria-expanded="false">
+                                <i class="fa-regular fa-user pe-2"></i> Admin
+                            </a>
+                            <ul id="admin" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="UserForm.html" class="sidebar-link">Add User</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="UserRoles.html" class="sidebar-link">User Roles</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+        </aside>
+
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <div class=" col-md-6 d-flex gap-3">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div>
+                    <h7>Welcome Velarium User</h7>
+                </div>
+
+                <div class="btn btn-secondary " ><i class="bi bi-bell-fill"></i></div>
+
+            </div>
+                <div class="navbar-collapse navbar">
+
+                    <ul class="navbar-nav">
+                        
+
+
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- <a href="#" class="dropdown-item">Profile</a> -->
+                                <a href="#" class="dropdown-item">Settings</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h4>Payments</h4>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-3">
+                            <label for="SSN" class="form-label">SSN:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class=" col-md-3">
+                            <label for="Date" class="form-label">Date of payment:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="date" class="form-control" id="firstName" required>
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <label for="paymentMethod" class="form-label">Payment Method:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" id="paymentMethod" required>
+                                <option value="" disabled selected>Select Payment Method</option>
+                                <option value="cheque">Cheque</option>
+                                <option value="credit">Credit Card</option>
+                                <option value="debit">Debit Card</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <div class="row mt-3" id="chequeNumberField" style="display: none;">
+                        <div class="col-md-3">
+                            <label for="chequeNumber" class="form-label">Cheque Number:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="chequeNumber">
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3" id="otpField" style="display: none;">
+                        <div class="col-md-3">
+                            <label for="otp" class="form-label">OTP:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="otp">
+                        </div>
+                    </div>
+                   
+                    
+
+                    <br>
+                    <div class="row">
+                        <div class=" col-md-3">
+                            <label for="SSN" class="form-label">Comments:</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div> 
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 d-flex gap-3">
+                            <button class="btn btn-primary">Save</button>
+                            <button class="btn btn-danger">Clear</button>
+                        </div>
+                    </div>
+
+
+                     
+                </div>
+                <div class="mt-4">
+                    <h4>Payment Records</h4>
+                    <table id="dataTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>SSN</th>
+                                <th>Date of Payment</th>
+                                <th>Payment Method</th>
+                                <th>Cheque Number</th>
+                                <th>OTP</th>
+                                <th>Comments</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample data will be added here -->
+                        </tbody>
+                    </table> 
+            </main>
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>Velarium</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">About Us</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Terms & Conditions</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/script.js"></script>
+    <script src="js/dataTables.responsive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+    <script src="js/Index1.js"></script>
+    <script>
+
+
+
+document.getElementById('paymentMethod').addEventListener('change', function() {
+    var chequeField = document.getElementById('chequeNumberField');
+    var otpField = document.getElementById('otpField');
+    chequeField.style.display = 'none';
+    otpField.style.display = 'none';
+
+    if (this.value === 'cheque') {
+        chequeField.style.display = 'flex';
+    } else if (this.value === 'credit' || this.value === 'debit') {
+        otpField.style.display = 'flex';
+    }
+});
+
+    </script>
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+     <script>
+        $(document).ready(function() {
+            // Initialize DataTable
+            var table = $('#dataTable').DataTable();
+
+            // Sample data
+            var sampleData = [
+                ["123-45-6789", "2024-08-01", "Cheque", "001234", "123456", "Payment for membership"],
+                ["987-65-4321", "2024-08-02", "Credit Card", "", "654321", "Monthly payment"],
+                ["111-22-3333", "2024-08-03", "Debit Card", "", "987654", "Annual fee"],
+                ["444-55-6666", "2024-08-04", "Cheque", "005678", "345678", "Late payment"],
+                ["777-88-9999", "2024-08-05", "Credit Card", "", "456789", "Renewal fee"]
+            ];
+
+            // Add sample data to DataTable
+            sampleData.forEach(function(data) {
+                table.row.add([
+                    data[0],
+                    data[1],
+                    data[2],
+                    data[3],
+                    data[4],
+                    data[5],
+                    '<button type="button" class="btn btn-info btn-sm edit">Edit</button>' +
+                    '<button type="button" class="btn btn-danger btn-sm delete">Delete</button>'
+                ]).draw();
+            });
+
+            // Save record button
+            $('#saveRecord').on('click', function() {
+                var ssn = $('#SSN').val();
+                var paymentDate = $('#paymentDate').val();
+                var paymentMethod = $('#paymentMethod').val();
+                var chequeNumber = $('#chequeNumber').val();
+                var otp = $('#otp').val();
+                var comments = $('#comments').val();
+
+                if (ssn && paymentDate && paymentMethod) {
+                    table.row.add([
+                        ssn,
+                        paymentDate,
+                        paymentMethod,
+                        chequeNumber,
+                        otp,
+                        comments,
+                        '<button type="button" class="btn btn-info btn-sm edit">Edit</button>' +
+                        '<button type="button" class="btn btn-danger btn-sm delete">Delete</button>'
+                    ]).draw();
+
+                    // Clear form
+                    $('#SSN').val('');
+                    $('#paymentDate').val('');
+                    $('#paymentMethod').val('');
+                    $('#chequeNumber').val('');
+                    $('#otp').val('');
+                    $('#comments').val('');
+                    $('#chequeNumberField').hide();
+                    $('#otpField').hide();
+                }
+            });
+
+            // Clear form button
+            $('#clearForm').on('click', function() {
+                $('#SSN').val('');
+                $('#paymentDate').val('');
+                $('#paymentMethod').val('');
+                $('#chequeNumber').val('');
+                $('#otp').val('');
+                $('#comments').val('');
+                $('#chequeNumberField').hide();
+                $('#otpField').hide();
+            });
+
+            // Show/Hide fields based on payment method
+            $('#paymentMethod').on('change', function() {
+                var method = $(this).val();
+                if (method === 'cheque') {
+                    $('#chequeNumberField').show();
+                    $('#otpField').hide();
+                } else if (method === 'credit') {
+                    $('#chequeNumberField').hide();
+                    $('#otpField').show();
+                } else {
+                    $('#chequeNumberField').hide();
+                    $('#otpField').hide();
+                }
+            });
+
+            // Edit and delete functionality
+            $('#dataTable tbody').on('click', '.edit', function() {
+                var data = table.row($(this).parents('tr')).data();
+                $('#SSN').val(data[0]);
+                $('#paymentDate').val(data[1]);
+                $('#paymentMethod').val(data[2]);
+                $('#chequeNumber').val(data[3]);
+                $('#otp').val(data[4]);
+                $('#comments').val(data[5]);
+                table.row($(this).parents('tr')).remove().draw();
+            });
+
+            $('#dataTable tbody').on('click', '.delete', function() {
+                table.row($(this).parents('tr')).remove().draw();
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
